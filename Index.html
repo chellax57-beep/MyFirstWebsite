@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 19th Birthday!</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Georgia,serif}
+body{background:#E8EDE6;color:#2F3E33;text-align:center}
+.hidden{display:none!important}
+.cover{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;background:#DCE8D8}
+.envelope{font-size:90px;animation:float 2s infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+h1{font-size:36px;line-height:1.1;margin:10px 0}
+p{line-height:1.6}
+.btn{background:#5A7A5E;color:white;border:none;padding:14px 22px;border-radius:30px;font-size:16px;margin:8px;cursor:pointer;width:85%;max-width:320px}
+.btn2{background:white;color:#5A7A5E;border:2px solid #5A7A5E;padding:12px 20px;border-radius:30px;margin:8px;cursor:pointer}
+.card{background:white;margin:15px;border-radius:20px;padding:22px;text-align:left;box-shadow:0 5px 20px rgba(0,0,0,.1)}
+.card h2{text-align:center;margin-bottom:12px}
+.card p{font-size:16px}
+img{width:100%;border-radius:15px;margin-top:12px}
+.top{padding:30px 15px 10px}
+</style>
+</head>
+<body>
+
+<!-- COVER - ITO LANG MAKIKITA SA UNA -->
+<div id="cover" class="cover">
+  <div class="envelope">💌</div>
+  <p>A LITTLE SURPRISE FOR YOU</p>
+  <h1>Happy 19th<br>Birthday!</h1>
+  <p>To someone who makes life a little more beautiful.<br>Today, the world celebrates YOU. ♡</p>
+  <br>
+  <button class="btn" onclick="openSite()">💌 TAP TO OPEN</button>
+  <p style="font-size:13px;margin-top:10px">I prepared something special for you...</p>
+</div>
+
+<!-- MAIN - NAKATAGO HANGGANG PININDOT -->
+<div id="main" class="hidden">
+  <div class="top">
+    <p>A LITTLE SURPRISE FOR YOU 🌷</p>
+    <h1>Happy 19th Birthday!</h1>
+    <p>To someone who makes life a little more beautiful.<br>Today, the world celebrates YOU. ♡</p>
+  </div>
+
+  <button class="btn" onclick="showSection('letter')">💌 OPEN YOUR LETTER</button><br>
+  <button class="btn" onclick="showSection('memories')">📸 OUR LITTLE MEMORIES</button><br>
+  <button class="btn" onclick="showSection('surprise')">🎀 ONE LAST SURPRISE</button>
+
+  <!-- LETTER -->
+  <div id="letter" class="card hidden">
+    <h2>A Letter For You ♡</h2>
+    <p>Dear Birthday Girl, HAPPIEST 19TH BIRTHDAY!! First of all, I just want to say how grateful I am to have you in my life. You deserve all the happiness, love, and beautiful things this world has to offer. As you enter another chapter of your life, I hope you never forget how special you are. I hope you continue to grow, chase your dreams, discover new things, and become the person you've always wanted to be. God bless you in all aspects of your life, may he comfort your worry heart rn, always count on Him, He will never disappoint you in His plans, if you ask why you were in that situation just remember that He has a plan on it. Trust Him with all your hearts and continue serving Him. Thank you for being YOU. I hope you know you are appreciated more than words can explain. No matter where life takes us, I hope we continue making beautiful memories together. Enjoy your day, birthday girl! You deserve everything beautiful in this world. I LOVE YOU!! With lots of love, Your chellax 🌷❤️</p>
+    <br><center><button class="btn2" onclick="goBack()">← GO BACK</button></center>
+  </div>
+
+  <!-- MEMORIES -->
+  <div id="memories" class="card hidden">
+    <h2>Our Little Memories 📸</h2>
+    <p style="text-align:center">Every picture holds a little piece of happiness.</p>
+    <img src="pics/1.jpg" onerror="this.style.display='none'">
+    <img src="pics/2.jpg" onerror="this.style.display='none'">
+    <img src="pics/3.jpg" onerror="this.style.display='none'">
+    <img src="pics/4.jpg" onerror="this.style.display='none'">
+    <br><center><button class="btn2" onclick="goBack()">← GO BACK</button></center>
+  </div>
+
+  <!-- SURPRISE -->
+  <div id="surprise" class="card hidden" style="text-align:center">
+    <h2>One Last Surprise 🎀</h2>
+    <p style="font-size:40px">🎂✨</p>
+    <p>Happy Birthday again!<br>Wish ko, sana lagi kang happy at hindi mo makalimutan na sobrang special ka.<br><br>Love you always! ♡</p>
+    <br><center><button class="btn2" onclick="goBack()">← GO BACK</button></center>
+  </div>
+  <br><br>
+</div>
+
+<script>
+function openSite(){
+  document.getElementById('cover').classList.add('hidden');
+  document.getElementById('main').classList.remove('hidden');
+  window.scrollTo(0,0);
+}
+function showSection(id){
+  ['letter','memories','surprise'].forEach(s=>document.getElementById(s).classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+function goBack(){
+  ['letter','memories','surprise'].forEach(s=>document.getElementById(s).classList.add('hidden'));
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+    </html>
